@@ -8,28 +8,41 @@
   <meta http-equiv="X-UA-Compatible"
     content="ie=edge">
   <title>Drag ’n Drop</title>
+  <link rel="stylesheet"
+    href="style.css">
 </head>
 
 <body>
-  <svg class="swatch one"
-    viewBox="0 0 20 20"
-    xmlns="http://www.w3.org/2000/svg"
-    width="30"
-    height="30">
-    <rect x="0"
-      y="0"
-      width="20"
-      height="20"></rect>
-  </svg>
-  <svg class="shape one"
-    viewBox="0 0 40 40"
-    xmlns="http://www.w3.org/2000/svg">
-    <circle cx="20"
-      cy="20"
-      r="10"
-      fill="lightgrey"></circle>
-  </svg>
-
+  <div class="swatches">
+    <div class="swatch one"
+      draggable="true"
+      ondragstart="onDragStart(event)">
+      <svg viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg"
+        width="30"
+        height="30"
+        fill="black">
+        <rect x="0"
+          y="0"
+          width="20"
+          height="20"></rect>
+      </svg>
+    </div>
+  </div>
+  <div class="shape">
+    <div class="shape one"
+      ondragenter="onDragEnter(event)"
+      ondragleave="onDragLeave(event)">
+      <svg viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="grey">
+        <circle cx="10"
+          cy="10"
+          r="10"
+          fill="lightgrey"></circle>
+      </svg>
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
 
