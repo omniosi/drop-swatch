@@ -9,8 +9,17 @@ function onDragStart(dragEvent) {
 function onDragEnter(e) {
   console.log('onDragEnter');
   if ([...e.dataTransfer.types].includes('text/plain')) {
+    e.preventDefault();
     e.target.style.opacity = 0.5;
   }
+}
+
+function onDragOver(e) {
+  console.log('onDragOver');
+  if ([...e.dataTransfer.types].includes('text/plain')) {
+    e.preventDefault();
+  }
+
 }
 
 function onDragLeave(e) {
@@ -18,10 +27,13 @@ function onDragLeave(e) {
   e.target.style.opacity = 1;
 }
 
-function onDrop(dropEvent) {
-  console.log("dropEvent");
-  if ([...dropEvent.dataTransfer.types].includes('text/plain')) {
-    dropEvent.preventDefault();
-    console.log('This fill is ', dropEvent.dataTransfer.getData('text/plain'));
+function onDrop(e) {
+  console.log("onDrop");
+  if ([...e.dataTransfer.types].includes('text/plain')) {
+    console.log('This fill is ', e.dataTransfer.getData('text/plain'));
+    e.preventDefault();
+    const dropTarget = e.target;
+    dropTarget.fill = e.dataTransfer.getData('text/plain');
+    e.target.style.opacity = 1;
   }
 }
