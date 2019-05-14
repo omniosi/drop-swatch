@@ -1,14 +1,12 @@
-function onDragStart(dragEvent) {
+function dragStart(e) {
   console.log("dragStart");
   // Add the target element's svg fill to the data transfer object
-  const dragged = dragEvent.target;
-  const svg = dragged.getElementsByTagName('svg')[0];
-  // dragEvent.dataTransfer.effectAllowed = 'copy';
-  dragEvent.dataTransfer.setData("text/plain", svg.fill);
-  console.log('data set = ', dragEvent.dataTransfer.getData("text/plain"));
+  e.dataTransfer.setData('text', e.target.dataset.swatch);
+  e.dataTransfer.effectAllowed = 'copy';
+  console.log('data set = ', e.dataTransfer.getData('text'));
 }
 
-function onDragEnter(e) {
+function dragEnter(e) {
   console.log('onDragEnter');
   if ([...e.dataTransfer.types].includes('text/plain')) {
     e.preventDefault();
@@ -16,15 +14,15 @@ function onDragEnter(e) {
   }
 }
 
-function onDragOver(e) {
+function dragOver(e) {
   console.log('onDragOver');
-  if ([...e.dataTransfer.types].includes('text/plain')) {
+  if ([...e.dataTransfer.types].includes('text')) {
     e.preventDefault();
   }
 
 }
 
-function onDragLeave(e) {
+function dragLeave(e) {
   console.log('onDragLeave');
   e.preventDefault();
   e.target.style.opacity = 1;
@@ -32,12 +30,12 @@ function onDragLeave(e) {
 
 function onDrop(e) {
   console.log("onDrop");
-  if ([...e.dataTransfer.types].includes('text/plain')) {
+  if ([...e.dataTransfer.types].includes('text')) {
     e.preventDefault();
     const dropTarget = e.currentTarget;
-    dropTarget.fill = e.dataTransfer.getData('text/plain');
-    e.target.style.opacity = 1;
-    console.log('This fill is ', e.dataTransfer.getData('text/plain'));
+    dropTarget.fill = e.dataTransfer.getData('text');
+    // e.target.style.opacity = 1;
+    console.log('This fill is ', e.dataTransfer.getData('text'));
   }
-  return false;
+  // return false;
 }
