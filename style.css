@@ -1,3 +1,15 @@
-.swatches .swatch.one svg{
-  fill: aquamarine;
+.swatches{
+  margin-block-start: 0;
+  padding-inline-start: 0;
 }
+.swatches .swatch{
+  background: #000;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  list-style: none;
+  padding-inline-start: 0;
+}
+.swatch.one{ background: red }
+.swatch.two{ background: blue }
+.swatch.three{ background: green }

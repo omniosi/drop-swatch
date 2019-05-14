@@ -13,22 +13,18 @@
 </head>
 
 <body>
-  <div class="swatches">
-    <div class="swatch one"
-      draggable="true"
-      ondragstart="onDragStart(event)">
-      <svg viewBox="0 0 20 20"
-        xmlns="http://www.w3.org/2000/svg"
-        width="30"
-        height="30"
-        fill="black">
-        <rect x="0"
-          y="0"
-          width="20"
-          height="20"></rect>
-      </svg>
-    </div>
-  </div>
+  <ul class="swatches"
+    ondragstart="dragStart(event)">
+    <li draggable="true"
+      class="swatch one"
+      data-swatch="red"></li>
+    <li draggable="true"
+      class="swatch two"
+      data-swatch="blue"></li>
+    <li draggable="true"
+      class="swatch three"
+      data-swatch="green"></li>
+  </ul>
   <div class="shape">
     <div class="shape one"
       ondragenter="onDragEnter(event)"
