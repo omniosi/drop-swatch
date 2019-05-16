@@ -26,14 +26,14 @@
       data-swatch="green"></li>
   </ul>
   <div class="shape">
-    <div class="shape one"
-      ondragenter="dragEnter(event)"
-      ondragover="dragOver(event)"
-      ondragleave="dragLeave(event)"
-      ondrop="onDrop(event)">
+    <div class="shape one">
       <svg viewBox="0 0 20 20"
         xmlns="http://www.w3.org/2000/svg">
-        <circle cx="10"
+        <circle ondragenter="dragEnter(event)"
+          ondragover="dragOver(event)"
+          ondragleave="dragLeave(event)"
+          ondrop="onDrop(event)"
+          cx="10"
           cy="10"
           r="10"
           fill="lightgrey"></circle>

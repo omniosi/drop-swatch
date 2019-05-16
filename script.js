@@ -25,7 +25,7 @@ function dragOver(e) {
 
 function dragLeave(e) {
   console.log('onDragLeave');
-  // e.preventDefault();
+  e.preventDefault();
   e.target.style.opacity = 1;
 }
 
