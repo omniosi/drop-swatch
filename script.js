@@ -11,10 +11,8 @@ function dragStart(e) {
 
 function dragEnter(e) {
   console.log('onDragEnter');
-  // if ([...e.dataTransfer.types].includes('text')) {
   e.preventDefault();
   e.target.style.opacity = 0.5;
-  // }
 }
 
 function dragOver(e) {
@@ -25,7 +23,6 @@ function dragOver(e) {
 
 function dragLeave(e) {
   console.log('onDragLeave');
-  // e.preventDefault();
   e.target.style.opacity = 1;
 }
 
