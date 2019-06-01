@@ -1,3 +1,13 @@
+var logo = document.getElementById('odc-logo');
+var paths = logo.querySelectorAll('path');
+
+paths.forEach(path => {
+  path.setAttribute('ondragenter', 'dragEnter(event)');
+  path.setAttribute('ondragover', 'dragOver(event)');
+  path.setAttribute('ondragleave', 'dragLeave(event)');
+  path.setAttribute('ondrop', 'onDrop(event)');
+});
+
 function dragStart(e) {
   // console.log("dragStart");
   if (e.target instanceof HTMLLIElement) {
