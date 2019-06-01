@@ -15,3 +15,7 @@
 .swatch.two{ background: #000 }
 .swatch.three{ background: green }
 .swatch.four{ background: #4267b1 }
+
+svg path{
+  cursor: copy;
+}
